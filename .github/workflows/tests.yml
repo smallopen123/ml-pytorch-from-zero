@@ -12,5 +12,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Run dependency-free unit tests
+      - name: Install lightweight tutorial dependencies
+        run: python -m pip install "numpy>=2.0,<3"
+      - name: Run tutorial unit tests
         run: python -m unittest discover -s tests -v
